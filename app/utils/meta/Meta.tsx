@@ -8,7 +8,7 @@ const Meta: FC<IMeta> = ({ title, description }) => {
 		<>
 			<Head>
 				<title>{title}</title>
-				<link rel='shortcut icon' href='/favicon.ico' type='image/x-icon' />
+				<link rel='shortcut icon' href='/favicon.png' type='image/png' />
 				{description ? (
 					<meta
 						itemProp='description'
