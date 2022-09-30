@@ -6,7 +6,7 @@ const Field = forwardRef<HTMLElement, IField>(
 	({ error, type = 'text', style, ...rest }, ref) => {
 		return (
 			<div className={styles.input} style={style}>
-				<input ref={ref} type={type} {...rest} />
+				<input ref={ref as any} type={type} {...rest} />
 				{error && <div className={styles.error}>{error.message}</div>}
 			</div>
 		)

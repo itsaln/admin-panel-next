@@ -6,7 +6,7 @@ const TextArea = forwardRef<HTMLAreaElement, ITextArea>(
 	({ error, style, ...rest }, ref) => {
 		return (
 			<div className={styles['editor']} style={style}>
-				<textarea ref={ref} {...rest} />
+				<textarea ref={ref as any} {...rest} />
 				{error && <div className={styles.error}>{error.message}</div>}
 			</div>
 		)

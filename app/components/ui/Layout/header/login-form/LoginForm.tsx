@@ -3,10 +3,12 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import { useOutside } from '@/hooks/useOutside'
 import { useAuth } from '@/hooks/useAuth'
 import { IAuthFields } from '@/ui/Layout/header/login-form/login-form.interface'
-import styles from './LoginForm.module.scss'
-import { FaRegUserCircle } from 'react-icons/all'
+import { FaRegUserCircle } from 'react-icons/fa'
 import Field from '@/ui/Field/Field'
 import Button from '@/ui/Button/Button'
+import { validEmail } from '@/ui/Layout/header/login-form/login-auth.constants'
+import UserAvatar from '@/ui/UserAvatar/UserAvatar'
+import styles from './LoginForm.module.scss'
 
 const LoginForm: FC = () => {
 	const { ref, setIsShow, isShow } = useOutside(false)
@@ -21,7 +23,7 @@ const LoginForm: FC = () => {
 		mode: 'onChange'
 	})
 
-	const { setUser } = useAuth()
+	const { user, setUser } = useAuth()
 
 	const onSubmit: SubmitHandler<IAuthFields> = (data) => {
 		if (type === 'login') setUser({
@@ -35,9 +37,13 @@ const LoginForm: FC = () => {
 
 	return (
 		<div className={styles.wrapper} ref={ref}>
-			<button onClick={() => setIsShow(!isShow)}>
-				<FaRegUserCircle />
-			</button>
+			{user ? (
+				<UserAvatar avatarPath={user.avatarPath || ''} />
+			) : (
+				<button type='button' className={styles.button} onClick={() => setIsShow(!isShow)}>
+					<FaRegUserCircle />
+				</button>
+			)}
 			{isShow && (
 				<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 					<Field
@@ -48,7 +54,6 @@ const LoginForm: FC = () => {
 								message: 'Please enter a valid email address'
 							}
 						})}
-						// @ts-ignore
 						placeholder='Email'
 						error={errors.email}
 					/>
@@ -60,7 +65,6 @@ const LoginForm: FC = () => {
 								message: 'Min length should be 6 symbols'
 							}
 						})}
-						// @ts-ignore
 						placeholder='Password'
 						error={errors.password}
 						type={'password'}
@@ -71,7 +75,8 @@ const LoginForm: FC = () => {
 					<button
 						className={styles.register}
 						onClick={() => setType('register')}
-					>Register</button>
+					>Register
+					</button>
 				</form>
 			)}
 		</div>
