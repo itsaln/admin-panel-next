@@ -1,7 +1,81 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
+import { SubmitHandler, useForm } from 'react-hook-form'
+import { useOutside } from '@/hooks/useOutside'
+import { useAuth } from '@/hooks/useAuth'
+import { IAuthFields } from '@/ui/Layout/header/login-form/login-form.interface'
+import styles from './LoginForm.module.scss'
+import { FaRegUserCircle } from 'react-icons/all'
+import Field from '@/ui/Field/Field'
+import Button from '@/ui/Button/Button'
 
 const LoginForm: FC = () => {
-	return <div>LoginForm</div>
+	const { ref, setIsShow, isShow } = useOutside(false)
+
+	const [type, setType] = useState<'login' | 'register'>('login')
+
+	const {
+		register,
+		formState: { errors },
+		handleSubmit
+	} = useForm<IAuthFields>({
+		mode: 'onChange'
+	})
+
+	const { setUser } = useAuth()
+
+	const onSubmit: SubmitHandler<IAuthFields> = (data) => {
+		if (type === 'login') setUser({
+			id: 1,
+			name: 'Aln Dev',
+			email: 'aln@gmail.com',
+			avatarPath: '/avatar.png'
+		})
+		// else if (type === 'register')
+	}
+
+	return (
+		<div className={styles.wrapper} ref={ref}>
+			<button onClick={() => setIsShow(!isShow)}>
+				<FaRegUserCircle />
+			</button>
+			{isShow && (
+				<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+					<Field
+						{...register('email', {
+							required: 'Email is required',
+							pattern: {
+								value: validEmail,
+								message: 'Please enter a valid email address'
+							}
+						})}
+						// @ts-ignore
+						placeholder='Email'
+						error={errors.email}
+					/>
+					<Field
+						{...register('password', {
+							required: 'Password is required',
+							minLength: {
+								value: 6,
+								message: 'Min length should be 6 symbols'
+							}
+						})}
+						// @ts-ignore
+						placeholder='Password'
+						error={errors.password}
+						type={'password'}
+					/>
+					<div className='mt-5 mb-1 text-center'>
+						<Button onClick={() => setType('login')}>Login</Button>
+					</div>
+					<button
+						className={styles.register}
+						onClick={() => setType('register')}
+					>Register</button>
+				</form>
+			)}
+		</div>
+	)
 }
 
 export default LoginForm

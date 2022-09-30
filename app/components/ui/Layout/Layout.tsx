@@ -1,7 +1,6 @@
 import { FC, PropsWithChildren } from 'react'
 
 import Header from '@/ui/Layout/header/Header'
-
 import Meta from '@/utils/meta/Meta'
 import { IMeta } from '@/utils/meta/meta.interface'
 

@@ -1,0 +1,19 @@
+$gray: '#797979';
+
+.editor {
+  @apply relative block mt-6;
+
+  > textarea {
+    @apply pb-2 w-full border-b resize-none text-base;
+    min-height: 200px;
+
+    &::placeholder {
+      color: $gray;
+    }
+  }
+}
+
+.error {
+  @apply absolute -bottom-5 left-0 w-full text-primary;
+  font-size: 0.75rem;
+}
