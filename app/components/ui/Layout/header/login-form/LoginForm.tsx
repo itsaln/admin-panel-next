@@ -40,7 +40,7 @@ const LoginForm: FC = () => {
 			{user ? (
 				<UserAvatar avatarPath={user.avatarPath || ''} />
 			) : (
-				<button type='button' className={styles.button} onClick={() => setIsShow(!isShow)}>
+				<button className={styles.button} onClick={() => setIsShow(!isShow)}>
 					<FaRegUserCircle />
 				</button>
 			)}
