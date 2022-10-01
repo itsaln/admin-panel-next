@@ -9,6 +9,8 @@ import Button from '@/ui/Button/Button'
 import { validEmail } from '@/ui/Layout/header/login-form/login-auth.constants'
 import UserAvatar from '@/ui/UserAvatar/UserAvatar'
 import styles from './LoginForm.module.scss'
+import { motion } from 'framer-motion'
+import { menuAnimation } from '@/utils/animation/fade'
 
 const LoginForm: FC = () => {
 	const { ref, setIsShow, isShow } = useOutside(false)
@@ -18,7 +20,7 @@ const LoginForm: FC = () => {
 	const {
 		register,
 		formState: { errors },
-		handleSubmit
+		handleSubmit, reset
 	} = useForm<IAuthFields>({
 		mode: 'onChange'
 	})
@@ -33,18 +35,21 @@ const LoginForm: FC = () => {
 			avatarPath: '/avatar.png'
 		})
 		// else if (type === 'register')
+
+		reset()
+		setIsShow(false)
 	}
 
 	return (
 		<div className={styles.wrapper} ref={ref}>
 			{user ? (
-				<UserAvatar avatarPath={user.avatarPath || ''} />
+				<UserAvatar link='/dashboard' title='Перейти в dashboard' avatarPath={user.avatarPath || ''} />
 			) : (
 				<button className={styles.button} onClick={() => setIsShow(!isShow)}>
 					<FaRegUserCircle />
 				</button>
 			)}
-			{isShow && (
+			<motion.div animate={isShow ? 'open' : 'closed'} variants={menuAnimation}>
 				<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 					<Field
 						{...register('email', {
@@ -78,7 +83,7 @@ const LoginForm: FC = () => {
 					>Register
 					</button>
 				</form>
-			)}
+			</motion.div>
 		</div>
 	)
 }

@@ -1,14 +1,13 @@
 .wrapper {
-  @apply relative inline-flex;
+  @apply relative inline-flex py-2;
 
   .form {
     @apply p-4 absolute right-2 w-60 z-20 rounded-lg;
     top: calc(100% + 1.4rem);
-    background-color: #fff;
+    background-color: #dbe0f0;
 
     .register {
-      @apply text-gray-400 bg-white block text-center w-full;
-      font-size: 0.7rem;
+      @apply text-gray-600 bg-transparent block text-center text-xs font-light mt-2 w-full;
     }
   }
 

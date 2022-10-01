@@ -7,17 +7,17 @@ module.exports = {
 	],
 	theme: {
 		fontSize: {
-			xs: '1.1rem',
-			sm: '1.21rem',
-			tiny: '1.27rem',
-			base: '1.46rem',
-			xl: '1.825rem',
-			'2xl': '2.2rem',
-			'3xl': '2.7rem',
-			'4xl': '3.25rem',
-			'5xl': '4.3rem',
-			'6xl': '5.8rem',
-			'7xl': '7.3rem'
+			xs: '1rem',
+			sm: '1.1rem',
+			tiny: '1.21rem',
+			base: '1.27rem',
+			xl: '1.46rem',
+			'2xl': '1.825rem',
+			'3xl': '2.2rem',
+			'4xl': '2.7rem',
+			'5xl': '3.25rem',
+			'6xl': '4.3rem',
+			'7xl': '5.8rem'
 		},
 		extend: {
 			colors: {
@@ -35,19 +35,16 @@ module.exports = {
 		plugin(({ addUtilities, addComponents }) => {
 			addComponents({
 				'.shadow-icon': {
-					border: 'none',
-					outline: 'none',
-					borderRadius: '50%',
-					cursor: 'pointer',
-					padding: '0.6rem',
-					backgroundColor: '#fff',
 					display: 'flex',
 					alignItems: 'center',
 					justifyContent: 'center',
-					fontSize: '2.7rem',
+					backgroundColor: '#fff',
+					borderRadius: '50%',
+					fontSize: '2rem',
+					color: '#353538',
+					padding: '0.4rem',
 					transition: 'box-shadow .4s ease-in-out',
 					boxShadow: '0 3px 6px rgba(45, 8, 125, 0.2)',
-					color: '#353538',
 
 					'&:hover': {
 						boxShadow: '0 4px 16px rgba(45, 8, 125, 0.26)'
@@ -64,6 +61,9 @@ module.exports = {
 					display: 'flex',
 					alignItems: 'center',
 					justifyContent: 'center'
+				},
+				'.shadow-purple': {
+					boxShadow: '0 3px 6px rgba(45, 8, 125, 0.2)'
 				}
 			})
 		})
