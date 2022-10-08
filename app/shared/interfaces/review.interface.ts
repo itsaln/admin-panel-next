@@ -7,3 +7,7 @@ export interface IReview {
 	movie: IMovie
 	description: string
 }
+
+export interface IReviewDto extends Pick<IReview, 'description'> {
+	movieId: number
+}

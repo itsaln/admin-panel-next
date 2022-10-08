@@ -1,9 +1,30 @@
-import type { NextPage } from 'next'
+import type { GetStaticProps, NextPage } from 'next'
+import { MovieService } from '@/services/movie.service'
+import { IHome } from '@/screens/home/home.interface'
+import Home from '@/screens/home/Home'
 
-import Layout from '@/ui/Layout/Layout'
-
-const Home: NextPage = () => {
-	return <Layout title='ALN Cinema | itsaln'>Главная</Layout>
+const HomePage: NextPage<IHome> = (props) => {
+	return <Home {...props} />
 }
 
-export default Home
+// @ts-ignore
+export const getStaticProps: GetStaticProps<IHome> = async () => {
+	try {
+		const { data: newMovies } = await MovieService.getAll()
+
+		return {
+			props: {
+				newMovies
+			},
+			revalidate: 60
+		}
+	} catch (e) {
+		return {
+			props: {
+				newVideos: []
+			}
+		}
+	}
+}
+
+export default HomePage

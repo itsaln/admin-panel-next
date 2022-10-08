@@ -8,3 +8,5 @@ export interface IMovie {
 	reviews?: IReview[]
 	fees: number
 }
+
+export interface IMovieDto extends Pick<IMovie, 'name' | 'fees' | 'poster'> {}
