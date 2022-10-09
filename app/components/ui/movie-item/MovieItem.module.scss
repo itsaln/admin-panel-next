@@ -1,0 +1,23 @@
+
+.item {
+  @apply relative block;
+  width: 14%;
+
+  .rating {
+    @apply absolute -left-2.5 top-2 bg-green-600 text-white rounded-md py-1 px-4 text-center z-10;
+  }
+
+  .poster {
+    @apply rounded-lg overflow-hidden;
+  }
+
+  .heading {
+    @apply text-black mt-2 font-medium transition-colors;
+  }
+
+  &:hover {
+    .heading {
+      @apply text-primary;
+    }
+  }
+}
