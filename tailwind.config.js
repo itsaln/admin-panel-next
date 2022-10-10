@@ -21,13 +21,14 @@ module.exports = {
 		},
 		extend: {
 			colors: {
-				primary: '#5F3DF7'
+				primary: '#5F3DF7',
+				black: '#222'
 			},
 			transitionTimingFunction: {
-				DEFAULT: 'ease-in-out'
+				DEFAULT: 'ease'
 			},
 			transitionDuration: {
-				DEFAULT: '350ms'
+				DEFAULT: '250ms'
 			}
 		}
 	},

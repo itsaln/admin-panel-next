@@ -11,6 +11,8 @@ import UserAvatar from '@/ui/UserAvatar/UserAvatar'
 import styles from './LoginForm.module.scss'
 import { motion } from 'framer-motion'
 import { menuAnimation } from '@/utils/animation/fade'
+import { useMutation } from '@tanstack/react-query'
+import { AuthService } from '@/services/auth/auth.service'
 
 const LoginForm: FC = () => {
 	const { ref, setIsShow, isShow } = useOutside(false)
@@ -27,17 +29,45 @@ const LoginForm: FC = () => {
 
 	const { user, setUser } = useAuth()
 
-	const onSubmit: SubmitHandler<IAuthFields> = (data) => {
-		if (type === 'login') setUser({
-			id: 1,
-			name: 'Aln Dev',
-			email: 'aln@gmail.com',
-			avatarPath: '/avatar.png'
-		})
-		// else if (type === 'register')
+	const { mutate: loginSync } = useMutation(
+		['login'],
+		(data: IAuthFields) => AuthService.login(data.email, data.password),
+		{
+			onSuccess(data) {
+				if (setUser) {
+					setUser(data.user)
+					reset()
+					setIsShow(false)
+				}
+			}
+		}
+	)
 
-		reset()
-		setIsShow(false)
+	const { mutate: registerSync } = useMutation(
+		['register'],
+		(data: IAuthFields) => AuthService.register(data.email, data.password),
+		{
+			onSuccess(data) {
+				if (setUser) {
+					setUser(data.user)
+					reset()
+					setIsShow(false)
+				}
+			}
+		}
+	)
+
+	const onSubmit: SubmitHandler<IAuthFields> = (data) => {
+		// if (type === 'login') loginSync(data)
+		// else if (type === 'register') registerSync(data)
+		switch (type) {
+			case 'login':
+				loginSync(data)
+				break
+			case 'register':
+				registerSync(data)
+				break
+		}
 	}
 
 	return (
@@ -49,7 +79,7 @@ const LoginForm: FC = () => {
 					<FaRegUserCircle />
 				</button>
 			)}
-			<motion.div animate={isShow ? 'open' : 'closed'} variants={menuAnimation}>
+			<motion.div initial={false} animate={isShow ? 'open' : 'closed'} variants={menuAnimation}>
 				<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 					<Field
 						{...register('email', {
