@@ -10,7 +10,7 @@ const Home: FC<IHome> = ({ newMovies }) => {
 		<Layout title='ALN Cinema | itsaln'>
 			<h1 className={styles.heading}>Newest movies</h1>
 			<div className={styles.catalog}>
-				{newMovies.length? (
+				{newMovies.length ? (
 					newMovies.map(movie => <MovieItem movie={movie} key={movie.id} />)
 				) : (
 					<div>Movies not found</div>
