@@ -47,7 +47,7 @@ const Movie: FC = () => {
 					</div>
 				</div>
 
-				{/*<Reviews movieId={movieId} reviews={} />*/}
+				<Reviews movieId={movieId} reviews={movie.reviews} refetch={refetch} />
 			</div>
 		</Layout>
 	)
