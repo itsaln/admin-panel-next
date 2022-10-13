@@ -8,12 +8,13 @@ export const getContentType = () => ({
 export const API_URL = `${process.env.APP_URL}/api`
 
 export const axiosClassic = axios.create({
-	baseURL: API_URL,
+	// baseURL: API_URL,
+	baseURL: `http://localhost:3001/api`,
 	headers: getContentType()
 })
 
 const instance = axios.create({
-	baseURL: API_URL,
+	baseURL: `http://localhost:3001/api`,
 	headers: getContentType()
 })
 

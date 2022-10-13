@@ -2,18 +2,18 @@
 
 .input {
   @apply relative block mb-5 bg-white rounded-md;
-  @include shadow();
 
   > input {
-    @apply py-2 px-3 w-full text-base;
+    @apply py-2 px-3 w-full text-xs;
+    @include shadow();
     border-radius: inherit;
 
     &::placeholder {
-      @apply text-gray-400;
+      @apply text-gray-400 font-light;
     }
 
     &:focus-visible {
-      @apply border-primary;
+      outline: none;
     }
   }
 }

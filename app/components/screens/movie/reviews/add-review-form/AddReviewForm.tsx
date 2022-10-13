@@ -1,12 +1,12 @@
 import { FC } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
+import { useQueryClient } from '@tanstack/react-query'
 import { IReviewDto } from '@/shared/interfaces/review.interface'
 import { useMutation } from '@tanstack/react-query'
 import { ReviewService } from '@/services/review.service'
 import Field from '@/ui/Field/Field'
 import { MdSend } from 'react-icons/all'
 import styles from './AddReviewForm.module.scss'
-import { queryClient } from '../../../../../../pages/_app'
 
 const AddReviewForm: FC<{ movieId: number }> = ({ movieId }) => {
 	const {
@@ -16,6 +16,8 @@ const AddReviewForm: FC<{ movieId: number }> = ({ movieId }) => {
 		reset
 	} = useForm<IReviewDto>({ mode: 'onChange' })
 
+	const queryClient = useQueryClient()
+
 	const { mutateAsync } = useMutation(
 		['add review'],
 		(data: IReviewDto) => ReviewService.createReview({ ...data, movieId }),
@@ -23,6 +25,7 @@ const AddReviewForm: FC<{ movieId: number }> = ({ movieId }) => {
 			async onSuccess() {
 				reset()
 				await queryClient.invalidateQueries(['get movie', movieId])
+				debugger
 			}
 		}
 	)

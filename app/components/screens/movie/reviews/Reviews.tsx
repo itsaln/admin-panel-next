@@ -10,7 +10,7 @@ const Reviews: FC<IReviews> = ({ movieId, reviews, isLoading }) => {
 	const { user } = useAuth()
 
 	return (
-		<>
+		<div className='mt-10'>
 			<div>
 				{user && <AddReviewForm movieId={movieId} />}
 			</div>
@@ -28,7 +28,7 @@ const Reviews: FC<IReviews> = ({ movieId, reviews, isLoading }) => {
 			) : (
 				<p>Reviews not found!</p>
 			)}
-		</>
+		</div>
 	)
 }
 
