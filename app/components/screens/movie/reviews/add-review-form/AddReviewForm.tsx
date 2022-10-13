@@ -6,8 +6,9 @@ import { ReviewService } from '@/services/review.service'
 import Field from '@/ui/Field/Field'
 import { MdSend } from 'react-icons/all'
 import styles from './AddReviewForm.module.scss'
+import { queryClient } from '../../../../../../pages/_app'
 
-const AddReviewForm: FC<{ movieId: number, refetch: any }> = ({ movieId, refetch }) => {
+const AddReviewForm: FC<{ movieId: number }> = ({ movieId }) => {
 	const {
 		register,
 		formState: { errors },
@@ -19,9 +20,9 @@ const AddReviewForm: FC<{ movieId: number, refetch: any }> = ({ movieId, refetch
 		['add review'],
 		(data: IReviewDto) => ReviewService.createReview({ ...data, movieId }),
 		{
-			onSuccess() {
+			async onSuccess() {
 				reset()
-				refetch()
+				await queryClient.invalidateQueries(['get movie', movieId])
 			}
 		}
 	)
