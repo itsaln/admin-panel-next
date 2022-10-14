@@ -21,7 +21,7 @@ export const getStaticProps: GetStaticProps<IHome> = async () => {
 	} catch (e) {
 		return {
 			props: {
-				newVideos: []
+				newMovies: []
 			}
 		}
 	}

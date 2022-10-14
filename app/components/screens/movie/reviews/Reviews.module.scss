@@ -1,19 +1,6 @@
 
-.wrapper {
-  @apply
-
-  .poster {
-    .image {}
-    .rating {}
-  }
-  .detail {
-    .heading {}
-    .title {}
-  }
-}
-
 .reviewItem {
-  @apply p-4 bg-gray-400;
+  @apply p-4 rounded-lg mb-3;
   background-color: #d3daf0;
   color: #222;
 
@@ -30,6 +17,6 @@
   }
 
   > article {
-    @apply mt-4;
+    @apply text-xs mt-3;
   }
 }

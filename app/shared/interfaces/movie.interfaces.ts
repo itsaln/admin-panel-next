@@ -3,7 +3,7 @@ import { IReview } from '@/shared/interfaces/review.interface'
 export interface IMovie {
 	id: number
 	name: string
-	rating: number
+	rating: number | null
 	poster: string
 	views: number
 	reviews?: IReview[]

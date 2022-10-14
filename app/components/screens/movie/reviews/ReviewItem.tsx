@@ -17,9 +17,7 @@ const ReviewItem: FC<{ review: IReview }> = ({ review }) => {
 					<div>{review.user.name}</div>
 				</div>
 			)}
-			<article>
-				{review.description}
-			</article>
+			<article>{review.description}</article>
 		</div>
 	)
 }

@@ -9,9 +9,10 @@ module.exports = {
 		fontSize: {
 			xs: '1rem',
 			sm: '1.1rem',
-			tiny: '1.21rem',
+			tiny: '1.19rem',
 			base: '1.27rem',
-			xl: '1.46rem',
+			lg: '1.4rem',
+			xl: '1.64rem',
 			'2xl': '1.825rem',
 			'3xl': '2.2rem',
 			'4xl': '2.7rem',
