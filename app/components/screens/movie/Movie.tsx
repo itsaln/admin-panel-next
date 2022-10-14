@@ -7,10 +7,15 @@ import Reviews from '@/screens/movie/reviews/Reviews'
 import { MovieService } from '@/services/movie.service'
 import styles from '@/screens/home/Home.module.scss'
 
+function Review(props: { movieId: number, reviews: any, isLoading: false | true }) {
+	return null
+}
+
 const Movie: FC = () => {
 	const { query } = useRouter()
 	const movieId = Number(query?.id)
-	const { refetch, data: movie } = useQuery(
+
+	const { refetch, data: movie, isLoading } = useQuery(
 		['get movie', query?.id],
 		() => MovieService.getMovieById(movieId),
 		{
@@ -22,14 +27,16 @@ const Movie: FC = () => {
 		<Layout title={`${movie?.name} | itsaln`}>
 			<div className={styles.wrapper}>
 				<div className={styles.poster}>
+					{movie?.poster &&
 					<Image
 						width={220}
 						height={330}
-						src={movie?.poster || ''}
+						src={movie?.poster}
 						alt={movie?.name}
 						layout='responsive'
 						className={styles.image}
 					/>
+					}
 					<div className={styles.rating}>
 						{movie?.rating}
 					</div>
@@ -47,7 +54,11 @@ const Movie: FC = () => {
 					</div>
 				</div>
 
-				<Reviews movieId={movieId} reviews={movie.reviews} refetch={refetch} />
+				<Reviews
+					movieId={movieId}
+					reviews={movie?.reviews || []}
+					isLoading={isLoading}
+				/>
 			</div>
 		</Layout>
 	)

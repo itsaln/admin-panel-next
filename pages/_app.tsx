@@ -5,7 +5,7 @@ import AuthProvider from '../app/provider/auth-provider/AuthProvider'
 import '@/assets/styles/tailwind.scss'
 import '@/assets/styles/globals.scss'
 
-const queryClient = new QueryClient({
+export const queryClient = new QueryClient({
 	defaultOptions: {
 		queries: {
 			refetchOnWindowFocus: false
