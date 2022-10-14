@@ -24,8 +24,7 @@ const AddReviewForm: FC<{ movieId: number }> = ({ movieId }) => {
 		{
 			async onSuccess() {
 				reset()
-				await queryClient.invalidateQueries(['get movie', movieId])
-				debugger
+				await queryClient.invalidateQueries(['get movie', movieId.toString()])
 			}
 		}
 	)

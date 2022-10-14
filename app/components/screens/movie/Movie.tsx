@@ -1,11 +1,12 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
-import { useQuery } from '@tanstack/react-query'
+import { useMutation, useQuery } from '@tanstack/react-query'
 import Layout from '@/ui/Layout/Layout'
 import Reviews from '@/screens/movie/reviews/Reviews'
 import { MovieService } from '@/services/movie.service'
 import styles from './Movie.module.scss'
+import { ViewsService } from '@/services/views.service'
 
 const Movie: FC = () => {
 	const { query } = useRouter()
@@ -19,6 +20,15 @@ const Movie: FC = () => {
 			select: ({ data }) => data
 		}
 	)
+
+	const { mutate } = useMutation(
+		['update count opened'],
+		() => ViewsService.updateViews(movieId.toString())
+	)
+
+	useEffect(() => {
+		if (movieId) mutate()
+	}, [movieId])
 
 	return (
 		<Layout title={`${movie?.name} | itsaln`}>

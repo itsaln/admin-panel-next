@@ -1,14 +1,17 @@
 import { FC } from 'react'
+import cn from 'classnames'
 import { IMovie } from '@/shared/interfaces/movie.interfaces'
 import Link from 'next/link'
 import Image from 'next/image'
 
 import styles from './MovieItem.module.scss'
 
-const MovieItem: FC<{ movie: IMovie }> = ({ movie }) => {
+const MovieItem: FC<{ movie: IMovie, variant?: 'sm' | 'md' }> = ({ movie, variant = 'md' }) => {
 	return (
 		<Link href={`/movie/${movie.id}`}>
-			<a className={styles.item}>
+			<a className={cn(styles.item, {
+				[styles.small]: variant === 'sm'
+			})}>
 				{movie.rating &&
 				<div className={styles.rating}>
 					{movie.rating}

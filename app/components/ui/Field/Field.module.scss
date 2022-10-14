@@ -16,6 +16,18 @@
       outline: none;
     }
   }
+
+  &.withIcon {
+    @apply mb-0;
+
+    > input {
+      @apply pl-10;
+    }
+  }
+
+  > .icon {
+    @apply absolute top-2 left-2 text-stone-600 text-lg;
+  }
 }
 
 .error {

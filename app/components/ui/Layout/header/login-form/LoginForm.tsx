@@ -1,5 +1,6 @@
 import { FC, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
+import { useMutation } from '@tanstack/react-query'
 import { useOutside } from '@/hooks/useOutside'
 import { useAuth } from '@/hooks/useAuth'
 import { IAuthFields } from '@/ui/Layout/header/login-form/login-form.interface'
@@ -11,7 +12,6 @@ import UserAvatar from '@/ui/UserAvatar/UserAvatar'
 import styles from './LoginForm.module.scss'
 import { motion } from 'framer-motion'
 import { menuAnimation } from '@/utils/animation/fade'
-import { useMutation } from '@tanstack/react-query'
 import { AuthService } from '@/services/auth/auth.service'
 
 const LoginForm: FC = () => {
@@ -79,7 +79,11 @@ const LoginForm: FC = () => {
 					<FaRegUserCircle />
 				</button>
 			)}
-			<motion.div initial={false} animate={isShow ? 'open' : 'closed'} variants={menuAnimation}>
+			<motion.div
+				initial={false}
+				animate={isShow ? 'open' : 'closed'}
+				variants={menuAnimation}
+			>
 				<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 					<Field
 						{...register('email', {
