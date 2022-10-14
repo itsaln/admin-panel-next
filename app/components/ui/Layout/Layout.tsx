@@ -1,17 +1,24 @@
 import { FC, PropsWithChildren } from 'react'
-
-import Header from '@/ui/Layout/header/Header'
+import Header from '@/ui/layout/header/Header'
+import Sidebar from '@/ui/layout/sidebar/Sidebar'
 import Meta from '@/utils/meta/Meta'
 import { IMeta } from '@/utils/meta/meta.interface'
+import styles from './Layout.module.scss'
+import { useAuth } from '@/hooks/useAuth'
 
 const Layout: FC<PropsWithChildren<IMeta>> = ({ children, ...meta }) => {
+	const { user } = useAuth()
+
 	return (
 		<>
 			<Meta {...meta} />
-			<div>
-				<Header />
-				<main className='p-4'>{children}</main>
-			</div>
+			<section className={user ? styles.wrapper : ''}>
+				{user && <Sidebar />}
+				<div className={user ? styles.content : ''}>
+					<Header />
+					<main className={styles.main}>{children}</main>
+				</div>
+			</section>
 		</>
 	)
 }

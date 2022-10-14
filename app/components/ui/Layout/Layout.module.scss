@@ -1,0 +1,18 @@
+@import '../../../assets/styles/mixins';
+
+.wrapper {
+  @apply grid h-screen;
+  grid-template-columns: 1fr 18fr;
+  height: calc(100vh - 5rem);
+
+  .content {
+    @include shadow('lg', false);
+    @apply rounded-3xl;
+    background-color: #ebeffd;
+    z-index: 1;
+  }
+}
+
+.main {
+  @apply px-6 py-4;
+}

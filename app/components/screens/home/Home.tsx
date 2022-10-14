@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { IHome } from '@/screens/home/home.interface'
-import Layout from '@/ui/Layout/Layout'
+import Layout from '@/ui/layout/Layout'
 import MovieItem from '@/ui/movie-item/MovieItem'
 
 import styles from './Home.module.scss'

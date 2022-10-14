@@ -4,7 +4,7 @@ import { useQueryClient } from '@tanstack/react-query'
 import { IReviewDto } from '@/shared/interfaces/review.interface'
 import { useMutation } from '@tanstack/react-query'
 import { ReviewService } from '@/services/review.service'
-import Field from '@/ui/Field/Field'
+import Field from '@/ui/field/Field'
 import { MdSend } from 'react-icons/all'
 import styles from './AddReviewForm.module.scss'
 

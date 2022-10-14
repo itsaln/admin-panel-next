@@ -1,6 +1,6 @@
 import { forwardRef } from 'react'
 import cn from 'classnames'
-import { IField } from '@/ui/Field/field.interface'
+import { IField } from '@/ui/field/field.interface'
 import styles from './Field.module.scss'
 
 const Field = forwardRef<HTMLElement, IField>(

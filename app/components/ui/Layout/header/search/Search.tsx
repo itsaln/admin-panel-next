@@ -1,6 +1,6 @@
 import { FC } from 'react'
-import { useSearch } from '@/ui/Layout/header/search/useSearch'
-import Field from '@/ui/Field/Field'
+import { useSearch } from '@/ui/layout/header/search/useSearch'
+import Field from '@/ui/field/Field'
 import { BiSearch } from 'react-icons/bi'
 import MovieItem from '@/ui/movie-item/MovieItem'
 import { motion } from 'framer-motion'
