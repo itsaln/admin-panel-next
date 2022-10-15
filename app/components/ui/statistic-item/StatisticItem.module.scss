@@ -23,16 +23,16 @@
     z-index: 1;
   }
 
-  &.blue::after {
+  &.color_1::after {
     background-image: linear-gradient(to top, #4978fa, #3a62d2);
   }
-  &.light-blue::after {
+  &.color_2::after {
     background-image: linear-gradient(to top, #65caef, #4ca6c4);
   }
-  &.purple::after {
+  &.color_3::after {
     background-image: linear-gradient(to top, #746fd6, #5d58b4);
   }
-  &.green::after {
+  &.color_4::after {
     background-image: linear-gradient(to top, #00d098, #00a97b);
   }
 

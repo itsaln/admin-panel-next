@@ -1,8 +1,5 @@
-import { IconType } from 'react-icons'
-
 export interface IStatisticItem {
+	id: number
 	name: string
 	value: number
-	Icon: IconType
-	color: 'blue' | 'light-blue' | 'purple' | 'green'
 }
