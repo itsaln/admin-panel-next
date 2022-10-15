@@ -13,7 +13,8 @@ const MainStatistics: FC = () => {
 				<StatisticItem item={{
 					Icon: AiOutlineEye,
 					name: 'Views',
-					value: 200
+					value: 2000000,
+					color: 'blue'
 				}} />
 			</div>
 		</div>
