@@ -46,5 +46,6 @@
 
   .value {
     @apply text-lg font-medium;
+    min-height: 42px;
   }
 }

@@ -1,8 +1,11 @@
-import { FC } from 'react'
 import cn from 'classnames'
+import { FC } from 'react'
+
+import AnimatedCounter from '@/ui/AnimatedCounter'
 import { IStatisticItem } from '@/ui/statistic-item/statistic-item.interface'
-import styles from './StatisticItem.module.scss'
 import { getIcon } from '@/ui/statistic-item/statistics.util'
+
+import styles from './StatisticItem.module.scss'
 
 const StatisticItem: FC<{ item: IStatisticItem }> = ({ item }) => {
 	const Icon = getIcon(item.id)
@@ -13,7 +16,9 @@ const StatisticItem: FC<{ item: IStatisticItem }> = ({ item }) => {
 				<Icon />
 			</div>
 			<div className={styles.name}>{item.name}</div>
-			<div className={styles.value}>{item.value.toLocaleString('ru-RU')}</div>
+			<div className={styles.value}>
+				<AnimatedCounter to={item.value} />
+			</div>
 		</div>
 	)
 }
