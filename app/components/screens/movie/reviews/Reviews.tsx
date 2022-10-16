@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { useAuth } from '@/hooks/useAuth'
 import { IReviews } from '@/screens/movie/reviews/reviews.interface'
-// import Loader from '@/ui/Loader'
+import Loader from '@/ui/Loader'
 import AddReviewForm from '@/screens/movie/reviews/add-review-form/AddReviewForm'
 import ReviewItem from '@/screens/movie/reviews/ReviewItem'
 import styles from './Reviews.module.scss'
@@ -15,8 +15,7 @@ const Reviews: FC<IReviews> = ({ movieId, reviews, isLoading }) => {
 				{user && <AddReviewForm movieId={movieId} />}
 			</div>
 			{isLoading ? (
-				// <Loader count={4} />
-				<p>loading...</p>
+				<Loader count={4} />
 			) : reviews?.length ? (
 				<>
 					<div className={styles.grid}>

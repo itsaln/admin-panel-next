@@ -14,5 +14,6 @@
 }
 
 .main {
-  @apply px-6 py-4;
+  @apply px-6 py-4 overflow-y-auto;
+  height: calc(100vh - 116px - 1.5rem - 1.5rem);
 }

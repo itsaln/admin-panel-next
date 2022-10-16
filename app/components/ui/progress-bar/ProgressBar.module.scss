@@ -1,0 +1,21 @@
+
+.progress {
+  @apply relative text-center mb-8;
+
+  .overflow {
+    @apply relative overflow-hidden w-52 h-24 mx-auto;
+  }
+
+  .bar {
+    @apply absolute top-0 left-0 w-52 h-52 rounded-full box-border;
+    border: 28px solid #fafafa;
+    border-bottom-color: #9ff162;
+    border-right-color: #9ff162;
+    box-shadow: 0 5px 20px rgba(37, 12, 171, 0.3);
+  }
+
+  .percent {
+    @apply font-semibold text-2xl -mt-9;
+    color: #fafafa;
+  }
+}
