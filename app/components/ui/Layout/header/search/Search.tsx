@@ -1,10 +1,13 @@
-import { FC } from 'react'
-import { useSearch } from '@/ui/layout/header/search/useSearch'
-import Field from '@/ui/field/Field'
-import { BiSearch } from 'react-icons/bi'
-import MovieItem from '@/ui/movie-item/MovieItem'
 import { motion } from 'framer-motion'
+import { FC } from 'react'
+import { BiSearch } from 'react-icons/bi'
+
+import Field from '@/ui/field/Field'
+import { useSearch } from '@/ui/layout/header/search/useSearch'
+import MovieItem from '@/ui/movie-item/MovieItem'
+
 import { menuAnimation } from '@/utils/animation/fade'
+
 import styles from './Search.module.scss'
 
 const Search: FC = () => {

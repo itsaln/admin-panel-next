@@ -1,9 +1,14 @@
-import { axiosClassic } from '../../api/interceptor'
 import { IAuthResponse } from '@/shared/interfaces/user.interfaces'
-import { removeTokenFromStorage, saveToStorage } from '@/services/auth/auth.helper'
+
+import {
+	removeTokenFromStorage,
+	saveToStorage
+} from '@/services/auth/auth.helper'
+
+import { axiosClassic } from '../../api/interceptor'
 
 export const AuthService = {
-	async login (email: string, password: string) {
+	async login(email: string, password: string) {
 		const response = await axiosClassic.post<IAuthResponse>('/auth/login', {
 			email,
 			password

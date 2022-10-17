@@ -1,11 +1,15 @@
+import { useQueryClient } from '@tanstack/react-query'
+import { useMutation } from '@tanstack/react-query'
 import { FC } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { useQueryClient } from '@tanstack/react-query'
-import { IReviewDto } from '@/shared/interfaces/review.interface'
-import { useMutation } from '@tanstack/react-query'
-import { ReviewService } from '@/services/review.service'
-import Field from '@/ui/field/Field'
 import { MdSend } from 'react-icons/all'
+
+import Field from '@/ui/field/Field'
+
+import { IReviewDto } from '@/shared/interfaces/review.interface'
+
+import { ReviewService } from '@/services/review.service'
+
 import styles from './AddReviewForm.module.scss'
 
 const AddReviewForm: FC<{ movieId: number }> = ({ movieId }) => {
@@ -29,7 +33,7 @@ const AddReviewForm: FC<{ movieId: number }> = ({ movieId }) => {
 		}
 	)
 
-	const onSubmit: SubmitHandler<IReviewDto> = async (data) => {
+	const onSubmit: SubmitHandler<IReviewDto> = async data => {
 		await mutateAsync(data)
 	}
 

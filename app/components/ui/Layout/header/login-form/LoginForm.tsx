@@ -1,18 +1,23 @@
+import { useMutation } from '@tanstack/react-query'
+import { motion } from 'framer-motion'
 import { FC, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { useMutation } from '@tanstack/react-query'
-import { useOutside } from '@/hooks/useOutside'
-import { useAuth } from '@/hooks/useAuth'
-import { IAuthFields } from '@/ui/layout/header/login-form/login-form.interface'
 import { FaRegUserCircle } from 'react-icons/fa'
-import Field from '@/ui/field/Field'
+
 import Button from '@/ui/button/Button'
+import Field from '@/ui/field/Field'
 import { validEmail } from '@/ui/layout/header/login-form/login-auth.constants'
+import { IAuthFields } from '@/ui/layout/header/login-form/login-form.interface'
 import UserAvatar from '@/ui/user-avatar/UserAvatar'
-import styles from './LoginForm.module.scss'
-import { motion } from 'framer-motion'
-import { menuAnimation } from '@/utils/animation/fade'
+
+import { useAuth } from '@/hooks/useAuth'
+import { useOutside } from '@/hooks/useOutside'
+
 import { AuthService } from '@/services/auth/auth.service'
+
+import { menuAnimation } from '@/utils/animation/fade'
+
+import styles from './LoginForm.module.scss'
 
 const LoginForm: FC = () => {
 	const { ref, setIsShow, isShow } = useOutside(false)
@@ -22,7 +27,8 @@ const LoginForm: FC = () => {
 	const {
 		register,
 		formState: { errors },
-		handleSubmit, reset
+		handleSubmit,
+		reset
 	} = useForm<IAuthFields>({
 		mode: 'onChange'
 	})
@@ -57,7 +63,7 @@ const LoginForm: FC = () => {
 		}
 	)
 
-	const onSubmit: SubmitHandler<IAuthFields> = (data) => {
+	const onSubmit: SubmitHandler<IAuthFields> = data => {
 		// if (type === 'login') loginSync(data)
 		// else if (type === 'register') registerSync(data)
 		switch (type) {
@@ -73,7 +79,11 @@ const LoginForm: FC = () => {
 	return (
 		<div className={styles.wrapper} ref={ref}>
 			{user ? (
-				<UserAvatar link='/dashboard' title='Перейти в dashboard' avatarPath={user.avatarPath || ''} />
+				<UserAvatar
+					link='/dashboard'
+					title='Перейти в dashboard'
+					avatarPath={user.avatarPath || ''}
+				/>
 			) : (
 				<button className={styles.button} onClick={() => setIsShow(!isShow)}>
 					<FaRegUserCircle />
@@ -114,7 +124,8 @@ const LoginForm: FC = () => {
 					<button
 						className={styles.register}
 						onClick={() => setType('register')}
-					>Register
+					>
+						Register
 					</button>
 				</form>
 			</motion.div>

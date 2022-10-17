@@ -1,5 +1,11 @@
 import { IconType } from 'react-icons'
-import { AiFillHome, AiOutlineEye, AiOutlineStar, AiOutlineTeam, AiOutlineVideoCamera } from 'react-icons/ai'
+import {
+	AiFillHome,
+	AiOutlineEye,
+	AiOutlineStar,
+	AiOutlineTeam,
+	AiOutlineVideoCamera
+} from 'react-icons/ai'
 
 export const getIcon = (id: number): IconType => {
 	switch (id) {

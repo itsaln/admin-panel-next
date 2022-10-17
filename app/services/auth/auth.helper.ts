@@ -1,4 +1,5 @@
 import Cookies from 'js-cookie'
+
 import { IAuthResponse } from '@/shared/interfaces/user.interfaces'
 
 export const saveTokenToStorage = (accessToken: string) => {

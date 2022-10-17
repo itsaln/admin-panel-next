@@ -1,9 +1,13 @@
 import { FC } from 'react'
-import { useAuth } from '@/hooks/useAuth'
-import { IReviews } from '@/screens/movie/reviews/reviews.interface'
-import Loader from '@/ui/Loader'
-import AddReviewForm from '@/screens/movie/reviews/add-review-form/AddReviewForm'
+
 import ReviewItem from '@/screens/movie/reviews/ReviewItem'
+import AddReviewForm from '@/screens/movie/reviews/add-review-form/AddReviewForm'
+import { IReviews } from '@/screens/movie/reviews/reviews.interface'
+
+import Loader from '@/ui/Loader'
+
+import { useAuth } from '@/hooks/useAuth'
+
 import styles from './Reviews.module.scss'
 
 const Reviews: FC<IReviews> = ({ movieId, reviews, isLoading }) => {
@@ -11,9 +15,7 @@ const Reviews: FC<IReviews> = ({ movieId, reviews, isLoading }) => {
 
 	return (
 		<div className='mt-10'>
-			<div>
-				{user && <AddReviewForm movieId={movieId} />}
-			</div>
+			<div>{user && <AddReviewForm movieId={movieId} />}</div>
 			{isLoading ? (
 				<Loader count={4} />
 			) : reviews?.length ? (

@@ -1,9 +1,11 @@
 import type { GetStaticProps, NextPage } from 'next'
-import { MovieService } from '@/services/movie.service'
-import { IHome } from '@/screens/home/home.interface'
-import Home from '@/screens/home/Home'
 
-const HomePage: NextPage<IHome> = (props) => {
+import Home from '@/screens/home/Home'
+import { IHome } from '@/screens/home/home.interface'
+
+import { MovieService } from '@/services/movie.service'
+
+const HomePage: NextPage<IHome> = props => {
 	return <Home {...props} />
 }
 

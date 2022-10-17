@@ -1,10 +1,11 @@
-import type { AppProps } from 'next/app'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-import AuthProvider from '../app/provider/auth-provider/AuthProvider'
+import type { AppProps } from 'next/app'
 
-import '@/assets/styles/tailwind.scss'
 import '@/assets/styles/globals.scss'
+import '@/assets/styles/tailwind.scss'
+
+import AuthProvider from '../app/provider/auth-provider/AuthProvider'
 
 export const queryClient = new QueryClient({
 	defaultOptions: {

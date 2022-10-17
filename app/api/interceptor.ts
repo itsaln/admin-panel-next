@@ -8,16 +8,16 @@ export const getContentType = () => ({
 export const API_URL = `${process.env.APP_URL}/api`
 
 export const axiosClassic = axios.create({
-	baseURL: `http://localhost:3000/api`,
+	baseURL: `http://localhost:3001/api`,
 	headers: getContentType()
 })
 
 const instance = axios.create({
-	baseURL: `http://localhost:3000/api`,
+	baseURL: `http://localhost:3001/api`,
 	headers: getContentType()
 })
 
-instance.interceptors.request.use((config) => {
+instance.interceptors.request.use(config => {
 	const accessToken = Cookies.get('accessToken')
 
 	if (config.headers && accessToken) {

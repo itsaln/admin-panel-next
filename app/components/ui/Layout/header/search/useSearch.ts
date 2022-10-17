@@ -1,7 +1,9 @@
-import { ChangeEvent, useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
-import { MovieService } from '@/services/movie.service'
+import { ChangeEvent, useState } from 'react'
+
 import { useDebounce } from '@/hooks/useDebounce'
+
+import { MovieService } from '@/services/movie.service'
 
 export const useSearch = () => {
 	const [searchTerm, setSearchTerm] = useState('')

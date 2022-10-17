@@ -8,16 +8,20 @@
       @apply rounded-lg;
     }
   }
+
   .detail {
     .heading {
       @apply text-3xl font-bold mb-1;
     }
+
     .rating {
       @apply font-bold text-3xl text-green-600 mb-4;
     }
+
     .title {
       @apply font-medium mb-1.5;
     }
+
     > ul {
       @apply list-none pl-0;
 

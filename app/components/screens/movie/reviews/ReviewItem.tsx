@@ -1,6 +1,8 @@
-import { FC } from 'react'
 import Image from 'next/image'
+import { FC } from 'react'
+
 import { IReview } from '@/shared/interfaces/review.interface'
+
 import styles from './Reviews.module.scss'
 
 const ReviewItem: FC<{ review: IReview }> = ({ review }) => {

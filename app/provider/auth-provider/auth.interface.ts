@@ -1,5 +1,6 @@
-import { IUser } from '@/shared/interfaces/user.interfaces'
 import { Dispatch, SetStateAction } from 'react'
+
+import { IUser } from '@/shared/interfaces/user.interfaces'
 
 export type TypeUserState = IUser | null
 

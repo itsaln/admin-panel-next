@@ -1,5 +1,6 @@
-import interceptor, { axiosClassic } from '../api/interceptor'
 import { IMovie, IMovieDto } from '@/shared/interfaces/movie.interfaces'
+
+import interceptor, { axiosClassic } from '../api/interceptor'
 
 export const MovieService = {
 	async getMovieById(id: number) {

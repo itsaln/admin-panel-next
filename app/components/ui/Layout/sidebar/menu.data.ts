@@ -1,5 +1,10 @@
 import { IconType } from 'react-icons'
-import { RiDashboard2Line, RiFileList3Line, RiListUnordered, RiMovie2Line } from 'react-icons/ri'
+import {
+	RiDashboard2Line,
+	RiFileList3Line,
+	RiListUnordered,
+	RiMovie2Line
+} from 'react-icons/ri'
 
 export interface IMenuItem {
 	link: string
@@ -9,18 +14,18 @@ export interface IMenuItem {
 export const menu: IMenuItem[] = [
 	{
 		link: '/dashboard',
-		Icon: RiDashboard2Line,
+		Icon: RiDashboard2Line
 	},
 	{
 		link: '/manage/movies',
-		Icon: RiMovie2Line,
+		Icon: RiMovie2Line
 	},
 	{
 		link: '/manage/reviews',
-		Icon: RiListUnordered,
+		Icon: RiListUnordered
 	},
 	{
 		link: '/manage/invoices',
-		Icon: RiFileList3Line,
+		Icon: RiFileList3Line
 	}
 ]

@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query'
 import { FC } from 'react'
 
 import TotalFees from '@/screens/dashboard/main/middle-statistics/total-fees/TotalFees'
-import ViewsChart from '@/screens/dashboard/main/middle-statistics/ViewsChart'
+import ViewsChart from '@/screens/dashboard/main/middle-statistics/views-chart/ViewsChart'
 
 import Loader from '@/ui/Loader'
 import Heading from '@/ui/heading/Heading'

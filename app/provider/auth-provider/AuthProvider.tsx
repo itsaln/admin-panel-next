@@ -1,8 +1,16 @@
-import { createContext, FC, PropsWithChildren, useEffect, useState } from 'react'
 import Cookies from 'js-cookie'
 import { useRouter } from 'next/router'
-import { IContext, TypeUserState } from './auth.interface'
+import {
+	FC,
+	PropsWithChildren,
+	createContext,
+	useEffect,
+	useState
+} from 'react'
+
 import { AuthService } from '@/services/auth/auth.service'
+
+import { IContext, TypeUserState } from './auth.interface'
 
 export const AuthContext = createContext({} as IContext)
 

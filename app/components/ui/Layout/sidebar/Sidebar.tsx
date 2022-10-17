@@ -1,8 +1,10 @@
-import { FC } from 'react'
-import { useRouter } from 'next/router'
-import Link from 'next/link'
 import cn from 'classnames'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { FC } from 'react'
+
 import { menu } from '@/ui/layout/sidebar/menu.data'
+
 import styles from './Sidebar.module.scss'
 
 const Sidebar: FC = () => {
@@ -12,17 +14,18 @@ const Sidebar: FC = () => {
 		<aside className={styles.sidebar}>
 			<div>
 				<Link href='/'>
-					<a className={styles.logo}>
-						R
-					</a>
+					<a className={styles.logo}>R</a>
 				</Link>
 
 				<nav className={styles.menu}>
 					<ul>
 						{menu.map(item => (
-							<li key={item.link} className={cn(styles.item, {
-								[styles.active]: item.link === asPath
-							})}>
+							<li
+								key={item.link}
+								className={cn(styles.item, {
+									[styles.active]: item.link === asPath
+								})}
+							>
 								<Link href={item.link}>
 									<a>
 										<item.Icon />

@@ -1,5 +1,5 @@
-import { IUser } from '@/shared/interfaces/user.interfaces'
 import { IMovie } from '@/shared/interfaces/movie.interfaces'
+import { IUser } from '@/shared/interfaces/user.interfaces'
 
 export interface IReview {
 	id: number
