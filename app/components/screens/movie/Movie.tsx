@@ -22,7 +22,7 @@ const Movie: FC = () => {
 		isLoading
 	} = useQuery(
 		['get movie', query?.id],
-		() => MovieService.getMovieById(movieId),
+		() => MovieService.findOne(movieId),
 		{
 			enabled: !!movieId,
 			select: ({ data }) => data

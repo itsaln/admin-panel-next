@@ -12,7 +12,7 @@ const HomePage: NextPage<IHome> = props => {
 // @ts-ignore
 export const getStaticProps: GetStaticProps<IHome> = async () => {
 	try {
-		const { data: newMovies } = await MovieService.getAll()
+		const { data: newMovies } = await MovieService.findAll()
 
 		return {
 			props: {
