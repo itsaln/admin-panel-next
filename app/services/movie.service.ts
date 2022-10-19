@@ -4,7 +4,7 @@ import interceptor, { axiosClassic } from '../api/interceptor'
 
 export const MovieService = {
 	async create() {
-		return interceptor.post<string>('/movie')
+		return interceptor.post<number>('/movie')
 	},
 
 	async findOne(id: number) {

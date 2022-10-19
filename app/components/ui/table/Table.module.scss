@@ -1,21 +1,25 @@
 
 .table-item {
-  @apply flex flex-wrap items-center gap-8 bg-white rounded-md w-full p-3 mb-3;
+  @apply flex-center-between flex-wrap bg-white rounded-md w-full p-3 mb-3;
   box-shadow: 0 4px 10px rgba(45, 8, 125, 0.2);
 
-  > span {
+  .info {
+    @apply flex items-center gap-5;
+
     img {
       @apply rounded;
     }
   }
 
-  > div {
+  .actions {
+    @apply flex items-center gap-3;
+
     > a {
       @apply hover:opacity-100 opacity-75 transition-opacity;
     }
-  }
 
-  > button {
-    @apply hover:opacity-100 opacity-75 transition-opacity text-red-700;
+    > button {
+      @apply hover:opacity-100 opacity-75 transition-opacity text-red-700;
+    }
   }
 }
