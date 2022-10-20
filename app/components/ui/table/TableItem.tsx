@@ -30,7 +30,12 @@ const TableItem: FC<{ item: ITableItem }> = ({ item }) => {
 				<div>{item.name}</div>
 			</div>
 			<div className={styles.actions}>
-				<a href={item.viewLink} target='_blank' rel='noreferrer' className='text-primary'>
+				<a
+					rel='noreferrer'
+					href={item.viewLink}
+					target='_blank'
+					className='text-primary'
+				>
 					<HiOutlineExternalLink />
 				</a>
 				<Link href={item.editLink}>

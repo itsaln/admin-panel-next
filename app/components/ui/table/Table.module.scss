@@ -1,6 +1,6 @@
 
 .table-item {
-  @apply flex-center-between flex-wrap bg-white rounded-md w-full p-3 mb-3;
+  @apply relative flex-center-between flex-wrap bg-white rounded-md w-full p-3 mb-3;
   box-shadow: 0 4px 10px rgba(45, 8, 125, 0.2);
 
   .info {

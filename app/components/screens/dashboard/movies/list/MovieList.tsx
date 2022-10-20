@@ -1,33 +1,20 @@
-import { useMutation, useQuery } from '@tanstack/react-query'
 import { FC } from 'react'
+
+import { useMovieList } from '@/screens/dashboard/movies/list/useMovieList'
 
 import Button from '@/ui/button/Button'
 import Heading from '@/ui/heading/Heading'
 import Layout from '@/ui/layout/Layout'
 import Table from '@/ui/table/Table'
 
-import { MovieService } from '@/services/movie.service'
-
 const MovieList: FC = () => {
-	const { data: response, isLoading } = useQuery(['get all movies'], () =>
-		MovieService.findAll()
-	)
-	const { mutate } = useMutation(['remove movie'], (id: number) =>
-		MovieService.remove(id)
-	)
-	const { mutate: create } = useMutation(
-		['create movie'],
-		() => MovieService.create(),
-		{
-			onSuccess(id) {}
-		}
-	)
+	const { create, mutate, isLoading, response } = useMovieList()
 
 	return (
 		<Layout title='Movie list'>
 			<div className='flex-center-between relative'>
 				<Heading isMargin={false}>Movie list</Heading>
-				<Button>Create movie</Button>
+				<Button onClick={() => create()}>Create movie</Button>
 			</div>
 			<Table
 				items={

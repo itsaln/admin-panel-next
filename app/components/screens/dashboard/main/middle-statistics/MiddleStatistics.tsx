@@ -6,7 +6,6 @@ import ViewsChart from '@/screens/dashboard/main/middle-statistics/views-chart/V
 
 import Loader from '@/ui/Loader'
 import Heading from '@/ui/heading/Heading'
-import StatisticItem from '@/ui/statistic-item/StatisticItem'
 
 import { StatisticsService } from '@/services/statistics/statistics.service'
 
