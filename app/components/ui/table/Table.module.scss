@@ -4,7 +4,7 @@
   box-shadow: 0 4px 10px rgba(45, 8, 125, 0.2);
 
   .info {
-    @apply flex items-center gap-5;
+    @apply flex items-center gap-5 w-11/12;
 
     img {
       @apply rounded;
@@ -12,7 +12,7 @@
   }
 
   .actions {
-    @apply flex items-center gap-3;
+    @apply flex items-center gap-3 ml-auto;
 
     > a {
       @apply hover:opacity-100 opacity-75 transition-opacity;

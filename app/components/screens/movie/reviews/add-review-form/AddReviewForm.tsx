@@ -24,7 +24,7 @@ const AddReviewForm: FC<{ movieId: number }> = ({ movieId }) => {
 
 	const { mutateAsync } = useMutation(
 		['add review'],
-		(data: IReviewDto) => ReviewService.createReview({ ...data, movieId }),
+		(data: IReviewDto) => ReviewService.create({ ...data, movieId }),
 		{
 			async onSuccess() {
 				reset()

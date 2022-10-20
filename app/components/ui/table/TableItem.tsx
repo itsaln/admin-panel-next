@@ -27,7 +27,7 @@ const TableItem: FC<{ item: ITableItem }> = ({ item }) => {
 						alt={item.name}
 					/>
 				)}
-				<div>{item.name}</div>
+				<div className='truncate-one'>{item.name}</div>
 			</div>
 			<div className={styles.actions}>
 				<a
@@ -38,11 +38,13 @@ const TableItem: FC<{ item: ITableItem }> = ({ item }) => {
 				>
 					<HiOutlineExternalLink />
 				</a>
-				<Link href={item.editLink}>
-					<a className='text-blue-500'>
-						<HiOutlinePencil />
-					</a>
-				</Link>
+				{item.editLink && (
+					<Link href={item.editLink}>
+						<a className='text-blue-500'>
+							<HiOutlinePencil />
+						</a>
+					</Link>
+				)}
 				<button onClick={item.removeHandler}>
 					<HiOutlineTrash />
 				</button>

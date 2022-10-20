@@ -3,6 +3,6 @@ export interface ITableItem {
 	name: string
 	image?: string
 	viewLink: string
-	editLink: string
+	editLink?: string
 	removeHandler: () => void
 }

@@ -3,7 +3,7 @@ const nextConfig = {
 	swcMinify: true,
 	poweredByHeader: false,
 	env: {
-		APP_URL: process.env.REACT_APP_URL
+		APP_URL: process.env.APP_URL
 	},
 	images: {
 		domains: ['localhost', 'cloudflare-ipfs.com']

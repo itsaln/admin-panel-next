@@ -1,9 +1,9 @@
 import { NextPage } from 'next'
 
-const ReviewsListPagePage: NextPage = () => {
-	return (
-		<div>ReviewsListPagePage</div>
-	)
+import ReviewList from '@/screens/dashboard/reviews/list/ReviewList'
+
+const ReviewsListPage: NextPage = () => {
+	return <ReviewList />
 }
 
-export default ReviewsListPagePage
+export default ReviewsListPage
