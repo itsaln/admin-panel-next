@@ -1,8 +1,8 @@
 .header {
-  @apply flex-center-between px-6 py-4 border-b border-solid border-white border-solid border-b-white;
+  @apply flex-center-between h-[120px] px-6 py-4 border-b border-solid border-b-white gdark:border-b-black;
 
   .logo {
-    @apply block cursor-pointer text-2xl text-black font-bold;
-    line-height: 0.8;
+    @apply block cursor-pointer text-2xl text-black gdark:text-white font-bold;
+    line-height: 1;
   }
 }
