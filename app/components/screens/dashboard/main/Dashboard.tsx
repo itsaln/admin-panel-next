@@ -3,7 +3,7 @@ import { FC } from 'react'
 import MainStatistics from '@/screens/dashboard/main/MainStatistics'
 import MiddleStatistics from '@/screens/dashboard/main/middle-statistics/MiddleStatistics'
 
-import Layout from '@/ui/Layout/Layout'
+import Layout from '@/ui/layout/Layout'
 
 const Dashboard: FC = () => {
 	return (
