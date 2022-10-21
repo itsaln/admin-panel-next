@@ -9,9 +9,13 @@ import {
 
 import { ITableItem } from '@/ui/table/table.interface'
 
+import { useTheme } from '@/hooks/useTheme'
+
 import styles from './Table.module.scss'
 
 const TableItem: FC<{ item: ITableItem }> = ({ item }) => {
+	const { isDarkTheme } = useTheme()
+
 	return (
 		<div className={styles['table-item']}>
 			<div className={styles.info}>
@@ -26,13 +30,13 @@ const TableItem: FC<{ item: ITableItem }> = ({ item }) => {
 					rel='noreferrer'
 					href={item.viewLink}
 					target='_blank'
-					className='text-primary'
+					className={isDarkTheme ? 'text-purple-400' : 'text-primary'}
 				>
 					<HiOutlineExternalLink />
 				</a>
 				{item.editLink && (
 					<Link href={item.editLink}>
-						<a className='text-blue-500'>
+						<a className={isDarkTheme ? 'text-blue-300' : 'text-blue-500'}>
 							<HiOutlinePencil />
 						</a>
 					</Link>

@@ -6,6 +6,7 @@ import { FC } from 'react'
 import { menu } from '@/ui/layout/sidebar/menu.data'
 
 import styles from './Sidebar.module.scss'
+import Switcher from '@/ui/switcher/Switcher'
 
 const Sidebar: FC = () => {
 	const { asPath } = useRouter()
@@ -35,9 +36,9 @@ const Sidebar: FC = () => {
 						))}
 					</ul>
 				</nav>
-			</div>
 
-			{/* TODO:	Change theme dark/light */}
+				<Switcher />
+			</div>
 		</aside>
 	)
 }

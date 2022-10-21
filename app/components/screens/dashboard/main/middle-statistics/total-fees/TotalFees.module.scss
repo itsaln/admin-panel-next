@@ -1,4 +1,8 @@
 
+:global(.dark) .fees {
+  background-image: linear-gradient(45deg, #38176f, #1b3182);
+}
+
 .fees {
   @apply relative text-white text-center rounded-2xl px-5 pt-16 pb-14;
   background-image: linear-gradient(45deg, #813bfb, #3f68fe);
@@ -6,7 +10,7 @@
 
   &::after {
     content: '';
-    @apply absolute w-3/4 h-7 rounded-b-2xl rounded-bl-xl top-0;
+    @apply absolute w-3/4 h-7 rounded-b-2xl rounded-bl-xl top-0 gdark:bg-none gdark:bg-white gdark:bg-opacity-20;
     left: 50%;
     transform: translateX(-50%);
     background-image: linear-gradient(to top, #e4e4fd, #dfe5fc);

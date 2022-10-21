@@ -1,15 +1,15 @@
 @import '../../../assets/styles/mixins';
 
 .input {
-  @apply relative block mb-5 bg-white rounded-md;
+  @apply relative block rounded-md bg-white mb-5 gdark:bg-zinc-900 gdark:text-white;
 
   > input {
-    @apply py-2 px-3 w-full text-xs;
+    @apply py-2 px-3 w-full text-xs bg-inherit;
     @include shadow();
     border-radius: inherit;
 
     &::placeholder {
-      @apply text-gray-400 font-light;
+      @apply text-gray-400 gdark:text-white gdark:text-opacity-50 font-light;
     }
 
     &:focus-visible {
@@ -31,6 +31,6 @@
 }
 
 .error {
-  @apply absolute -bottom-4 left-0 w-full text-primary;
+  @apply absolute -bottom-4 left-0 w-full text-primary gdark:text-purple-400;
   font-size: 0.75rem;
 }

@@ -8,5 +8,5 @@
 }
 
 .button {
-  @apply text-xl absolute top-1.5 right-2 text-primary opacity-75 hover:opacity-100 transition-opacity;
+  @apply text-xl absolute top-1.5 right-2 text-primary gdark:text-purple-400 opacity-75 hover:opacity-100 transition-opacity;
 }

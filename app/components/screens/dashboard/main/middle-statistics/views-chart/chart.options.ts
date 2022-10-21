@@ -1,4 +1,4 @@
-export const options = {
+export const options = (isDark: boolean): any => ({
 	responsive: true,
 	scales: {
 		x: {
@@ -9,7 +9,8 @@ export const options = {
 			ticks: {
 				font: {
 					size: 18
-				}
+				},
+				color: isDark ? '#fff' : '#222'
 			}
 		},
 		y: {
@@ -27,12 +28,12 @@ export const options = {
 	barThickness: 60,
 	plugins: {
 		tooltip: {
-			backgroundColor: '#fff',
-			titleColor: '#222',
+			backgroundColor: isDark ? '#222' : '#fff',
+			titleColor: isDark ? '#fff' : '#222',
 			titleFont: {
 				size: 18
 			},
-			bodyColor: '#222',
+			bodyColor: isDark ? '#fff' : '#222',
 			bodyFont: {
 				size: 16,
 				weight: 500
@@ -50,4 +51,4 @@ export const options = {
 			}
 		}
 	}
-}
+})

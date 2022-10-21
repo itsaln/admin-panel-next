@@ -11,22 +11,22 @@
 
   .detail {
     .heading {
-      @apply text-3xl font-bold mb-1;
+      @apply text-3xl font-bold mb-1 gdark:text-white;
     }
 
     .rating {
-      @apply font-bold text-3xl text-green-600 mb-4;
+      @apply font-bold text-3xl text-green-600 gdark:text-green-400 mb-4;
     }
 
     .title {
-      @apply font-medium mb-1.5;
+      @apply font-medium mb-1.5 gdark:text-white;
     }
 
     > ul {
       @apply list-none pl-0;
 
       > li {
-        @apply block text-sm mb-2;
+        @apply block text-sm mb-2 gdark:text-white;
 
         > span {
           &:first-child {

@@ -14,6 +14,6 @@ $gray: '#797979';
 }
 
 .error {
-  @apply absolute -bottom-5 left-0 w-full text-primary;
+  @apply absolute -bottom-5 left-0 w-full text-primary gdark:text-purple-400;
   font-size: 0.75rem;
 }

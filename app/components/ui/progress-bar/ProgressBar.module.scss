@@ -1,4 +1,10 @@
 
+:global(.dark) .progress .overflow .bar {
+  border: 28px solid rgba(255, 255, 255, .2);
+  border-bottom-color: #b4ff7a;
+  border-right-color: #b4ff7a;
+}
+
 .progress {
   @apply relative text-center mb-8;
 

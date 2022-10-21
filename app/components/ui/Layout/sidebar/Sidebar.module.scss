@@ -1,15 +1,18 @@
 @import '../../../../assets/styles/mixins';
 
+:global(.dark) .sidebar > div {
+  background-image: linear-gradient(45deg, #242428, #363940);
+  border-top: 2px solid rgba(255, 255, 255, .2);
+  border-bottom: 2px solid rgba(255, 255, 255, .1);
+}
+
 .sidebar {
   @apply relative;
 
   > div {
     @include shadow('lg', false);
-    @apply text-center absolute w-full;
-    background-color: #dae0fb;
+    @apply absolute w-full h-[70%] min-h-[500px] flex flex-col justify-between text-center;
     background-image: linear-gradient(45deg, #dee3f9, #bfc7f0);
-    height: 70%;
-    min-height: 500px;
     top: 50%;
     transform: translateY(-50%);
     border-top-left-radius: 2rem;
@@ -18,8 +21,7 @@
     border-bottom: 2px solid rgba(255, 255, 255, .6);
 
     .logo {
-      @apply text-5xl block mb-7;
-      color: #0053be;
+      @apply block text-5xl text-[#0053be] gdark:text-blue-300;
     }
 
     .menu {
@@ -28,17 +30,16 @@
           @apply block mb-5 text-xl;
 
           svg {
-            @apply mx-auto transition-colors;
-            fill: #1c2034;
+            @apply mx-auto transition-colors fill-[#1c2034] gdark:fill-white gdark:opacity-80 gdark:transition-opacity;
           }
         }
 
         &:hover svg {
-          fill: #666d91;
+          @apply fill-[#666d91] gdark:fill-white gdark:opacity-100;
         }
 
         &.active svg {
-          @apply fill-primary;
+          @apply fill-primary gdark:fill-purple-400;
         }
       }
     }

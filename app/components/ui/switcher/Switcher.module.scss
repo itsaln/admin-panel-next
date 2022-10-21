@@ -1,0 +1,13 @@
+
+.button {
+  @apply block text-xl p-6 transition-transform;
+
+  svg {
+    @apply mx-auto gdark:fill-white gdark:opacity-80;
+    fill: #1c2034;
+  }
+
+  &.light {
+    @apply rotate-180;
+  }
+}

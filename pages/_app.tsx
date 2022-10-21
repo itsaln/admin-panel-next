@@ -6,6 +6,7 @@ import '@/assets/styles/globals.scss'
 import '@/assets/styles/tailwind.scss'
 
 import AuthProvider from '../app/provider/auth-provider/AuthProvider'
+import { ThemeProvider } from '../app/provider/theme-provider/ThemeProvider'
 
 export const queryClient = new QueryClient({
 	defaultOptions: {
@@ -19,7 +20,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<QueryClientProvider client={queryClient}>
 			<AuthProvider>
-				<Component {...pageProps} />
+				<ThemeProvider>
+					<Component {...pageProps} />
+				</ThemeProvider>
 			</AuthProvider>
 			<ReactQueryDevtools initialIsOpen={false} />
 		</QueryClientProvider>

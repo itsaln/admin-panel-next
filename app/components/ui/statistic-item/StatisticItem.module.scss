@@ -1,13 +1,19 @@
 
+:global(.dark) .item {
+  background-color: #1f1f23;
+  border-top: 2px solid rgba(255, 255, 255, .1);
+  border-left: 2px solid rgba(255, 255, 255, .1);
+}
+
 .item {
-  @apply relative rounded-2xl cursor-default p-5 transition-all;
+  @apply relative rounded-2xl cursor-default p-5 transition-all gdark:text-white;
   background-color: #f2f7ff;
   border-top: 2px solid #fff;
   border-left: 2px solid #fff;
 
   &::before {
     content: '';
-    @apply absolute w-full h-full rounded-2xl -bottom-1 left-0 transition-all;
+    @apply absolute w-full h-full rounded-2xl -bottom-1 left-0 transition-all gdark:bg-purple-700 gdark:bg-opacity-50;
     background-color: #b7c5f3;
     box-shadow: 0 10px 20px rgba(37, 12, 171, 0.3);
     z-index: -1;
@@ -44,7 +50,7 @@
   }
 
   .icon {
-    @apply text-stone-700 mb-2 text-2xl;
+    @apply text-stone-700 mb-2 text-2xl gdark:text-white;
   }
 
   .value {

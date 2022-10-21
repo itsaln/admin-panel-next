@@ -1,6 +1,6 @@
 
 .item {
-  @apply relative block;
+  @apply relative block hover:opacity-80 transition-opacity;
   width: 14%;
 
   .rating {
@@ -12,12 +12,12 @@
   }
 
   .heading {
-    @apply text-black mt-2 font-medium transition-colors;
+    @apply text-black gdark:text-white mt-2 font-medium transition-colors;
   }
 
   &:hover {
     .heading {
-      @apply text-primary;
+      @apply text-primary gdark:text-purple-400;
     }
   }
 
