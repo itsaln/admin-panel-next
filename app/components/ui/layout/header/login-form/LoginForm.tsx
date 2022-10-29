@@ -96,6 +96,10 @@ const LoginForm: FC = () => {
 			>
 				<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 					<Field
+						{...register('name')}
+						placeholder='Name'
+					/>
+					<Field
 						{...register('email', {
 							required: 'Email is required',
 							pattern: {
