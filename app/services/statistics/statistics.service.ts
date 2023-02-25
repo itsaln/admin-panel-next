@@ -2,17 +2,17 @@ import { IStatisticItem } from '@/ui/statistic-item/statistic-item.interface'
 
 import { IMiddleStatisticsResponse } from '@/services/statistics/statistics.interface'
 
-import instance from '../../api/interceptor'
+import axios from '@/api/interceptor'
 
 export const StatisticsService = {
 	async getMain() {
-		return instance
+		return axios
 			.get<IStatisticItem[]>('/statistics/main')
 			.then(({ data }) => data)
 	},
 
 	async getMiddle() {
-		return instance
+		return axios
 			.get<IMiddleStatisticsResponse>('/statistics/middle')
 			.then(({ data }) => data)
 	}

@@ -1,14 +1,13 @@
 import axios from 'axios'
 import Cookies from 'js-cookie'
 
-export const getContentType = () => ({
-	'Content-Type': 'application/json'
-})
+import { getContentType } from '@/api/api.helpers'
 
-export const API_URL = `${process.env.APP_URL}/api`
+import { API_SERVER_URL, API_URL } from '@/config/api.config'
+import { IS_PRODUCTION } from '@/config/constants'
 
 export const axiosClassic = axios.create({
-	baseURL: API_URL,
+	baseURL: IS_PRODUCTION ? API_SERVER_URL : API_URL,
 	headers: getContentType()
 })
 
@@ -17,7 +16,7 @@ const instance = axios.create({
 	headers: getContentType()
 })
 
-instance.interceptors.request.use(config => {
+instance.interceptors.request.use((config) => {
 	const accessToken = Cookies.get('accessToken')
 
 	if (config.headers && accessToken) {

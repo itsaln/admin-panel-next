@@ -1,11 +1,11 @@
-import { IAuthResponse } from '@/shared/interfaces/user.interfaces'
+import { axiosClassic } from '@/api/interceptor'
 
 import {
 	removeTokenFromStorage,
 	saveToStorage
 } from '@/services/auth/auth.helper'
 
-import { axiosClassic } from '../../api/interceptor'
+import { IAuthResponse } from '@/shared/interfaces/user.interfaces'
 
 export const AuthService = {
 	async login(email: string, password: string) {

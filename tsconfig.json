@@ -17,16 +17,19 @@
     "baseUrl": "./app/",
     "paths": {
       "@/components/*": ["components/*"],
-      "@/ui/*": ["components/ui/*"],
+      "@/layout/*": ["components/layout/*"],
       "@/screens/*": ["components/screens/*"],
+      "@/ui/*": ["components/ui/*"],
 
-      "@/hooks/*": ["hooks/*"],
+      "@/api/*": ["api/*"],
       "@/shared/*": ["shared/*"],
-      "@/config/*": ["config/*"],
+      "@/hooks/*": ["hooks/*"],
       "@/services/*": ["services/*"],
       "@/utils/*": ["utils/*"],
-      "@/store/*": ["store/*"],
       "@/assets/*": ["assets/*"],
+      "@/config/*": ["config/*"],
+      "@/store/*": ["store/*"],
+      "@/providers/*": ["providers/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
