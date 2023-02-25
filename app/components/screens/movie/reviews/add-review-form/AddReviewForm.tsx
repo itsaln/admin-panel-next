@@ -2,7 +2,7 @@ import { useQueryClient } from '@tanstack/react-query'
 import { useMutation } from '@tanstack/react-query'
 import { FC } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { MdSend } from 'react-icons/all'
+import { MdSend } from 'react-icons/md'
 
 import Field from '@/ui/field/Field'
 
