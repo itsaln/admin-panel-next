@@ -22,7 +22,7 @@ const UploadField: FC<IUploadField> = ({
 				src={value}
 				alt=''
 			/>}
-			<label className='block'>
+			<label className='inline-block'>
 				<span className='sr-only'>Choose File</span>
 				<input type='file' onChange={uploadFile} />
 			</label>

@@ -23,9 +23,5 @@ export const menu: IMenuItem[] = [
 	{
 		link: '/manage/reviews',
 		Icon: RiListUnordered
-	},
-	{
-		link: '/manage/invoices',
-		Icon: RiFileList3Line
 	}
 ]
