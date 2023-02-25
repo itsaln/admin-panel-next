@@ -21,9 +21,9 @@ const TableItem: FC<{ item: ITableItem }> = ({ item }) => {
 			<div className={styles.info}>
 				<div>{item.id}</div>
 				{item.image && (
-					<Image width={33} height={50} src={item.image} alt={item.name} />
+					<Image width={32} height={50} src={item.image} alt={item.name} />
 				)}
-				<div className='truncate-one'>{item.name}</div>
+				<div className={styles.name}>{item.name}</div>
 			</div>
 			<div className={styles.actions}>
 				<a

@@ -1,5 +1,5 @@
 .header {
-  @apply flex-center-between h-[120px] px-6 py-4 border-b border-solid border-b-white gdark:border-b-black;
+  @apply flex-center-between h-[100px] px-6 py-4 border-b border-solid border-b-white gdark:border-b-black;
 
   .logo {
     @apply block cursor-pointer text-2xl text-black gdark:text-white font-bold;

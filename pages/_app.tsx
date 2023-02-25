@@ -3,7 +3,6 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import type { AppProps } from 'next/app'
 
 import '@/assets/styles/globals.scss'
-import '@/assets/styles/tailwind.scss'
 
 import AuthProvider from '../app/provider/auth-provider/AuthProvider'
 import { ThemeProvider } from '../app/provider/theme-provider/ThemeProvider'

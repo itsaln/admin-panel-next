@@ -1,23 +1,23 @@
-html,
-body {
-  @apply text-base bg-[#eff1ff] dark:bg-[#36363d];
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'fonts';
+
+* {
+  box-sizing: border-box;
 }
 
 body {
-  @apply p-6;
+  @apply text-base bg-[#eff1ff] dark:bg-[#36363d] p-6;
+  font-family: 'OpenSans', sans-serif;
+  //font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  //Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 button, input {
@@ -37,26 +37,23 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-.truncate-one {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box !important;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-}
+.custom-scroll {
+  @apply overflow-y-auto;
 
-.truncate-two {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box !important;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-}
+  &::-webkit-scrollbar {
+    @apply w-1.5 h-1;
+  }
+  &::-webkit-scrollbar-thumb {
+    @apply bg-primary bg-opacity-50;
+  }
+  &::-webkit-scrollbar-track {
+    @apply bg-primary bg-opacity-10;
+  }
 
-.truncate-three {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box !important;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      @apply bg-opacity-60;
+    }
+    &::-webkit-scrollbar-track {}
+  }
 }

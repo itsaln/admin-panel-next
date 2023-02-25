@@ -15,7 +15,7 @@ const Search: FC = () => {
 
 	return (
 		<div>
-			<label>
+			<label className={styles.search_label}>
 				<Field
 					placeholder='Search movies...'
 					value={searchTerm}

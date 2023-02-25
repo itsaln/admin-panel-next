@@ -3,6 +3,7 @@ const nextConfig = {
 	reactStrictMode: true,
 	swcMinify: true,
 	poweredByHeader: false,
+	optimizeFonts: false,
 	env: {
 		APP_URL: process.env.APP_URL
 	},

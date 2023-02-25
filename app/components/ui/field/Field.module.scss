@@ -9,7 +9,7 @@
     border-radius: inherit;
 
     &::placeholder {
-      @apply text-gray-400 gdark:text-white gdark:text-opacity-50 font-light;
+      @apply text-gray-400 gdark:text-white gdark:text-opacity-40;
     }
 
     &:focus-visible {
@@ -26,7 +26,7 @@
   }
 
   > .icon {
-    @apply absolute top-2 left-2 text-stone-600 text-lg;
+    @apply absolute top-[50%] -translate-y-[50%] left-3 text-gray-500 text-base;
   }
 }
 

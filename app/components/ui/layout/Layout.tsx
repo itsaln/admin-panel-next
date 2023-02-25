@@ -1,3 +1,4 @@
+import cn from 'classnames'
 import { FC, PropsWithChildren } from 'react'
 
 import Header from '@/ui/layout/header/Header'
@@ -20,7 +21,7 @@ const Layout: FC<PropsWithChildren<IMeta>> = ({ children, ...meta }) => {
 				{user && <Sidebar />}
 				<div className={user ? styles.content : ''}>
 					<Header />
-					<main className={styles.main}>{children}</main>
+					<main className={cn(styles.main, 'custom-scroll')}>{children}</main>
 				</div>
 			</section>
 		</>

@@ -38,6 +38,34 @@ module.exports = {
 		require('tailwindcss-global-dark'),
 		plugin(({ addUtilities, addComponents }) => {
 			addComponents({
+				'.truncate-1': {
+					display: '-webkit-box !important',
+					'-webkit-line-clamp': '1',
+					'-webkit-box-orient': 'vertical',
+					textOverflow: 'ellipsis',
+					overflow: 'hidden'
+				},
+				'.truncate-2': {
+					display: '-webkit-box !important',
+					'-webkit-line-clamp': '2',
+					'-webkit-box-orient': 'vertical',
+					textOverflow: 'ellipsis',
+					overflow: 'hidden'
+				},
+				'.truncate-3': {
+					display: '-webkit-box !important',
+					'-webkit-line-clamp': '3',
+					'-webkit-box-orient': 'vertical',
+					textOverflow: 'ellipsis',
+					overflow: 'hidden'
+				},
+				'.truncate-4': {
+					display: '-webkit-box !important',
+					'-webkit-line-clamp': '4',
+					'-webkit-box-orient': 'vertical',
+					textOverflow: 'ellipsis',
+					overflow: 'hidden'
+				},
 				'.shadow-icon': {
 					display: 'flex',
 					alignItems: 'center',
